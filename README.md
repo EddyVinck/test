@@ -26,3 +26,18 @@ veelgebruikte commands:
 ### toevoegen repository
 
 - je voegt deze repository toe met: git remote add origin https://github.com/EddyVinck/test.git
+
+### Extra
+
+Stel dat je iets upload wat je lokaal wel wilt houden maar van github af wil gooien dan:
+- $ git rm --cached document.docx // remove a file from git/remote repository
+- $ git commit -m "removed unwanted file.docx"
+- $ git push
+
+folder/map verwijderen van gitgub:
+- $ git rm -r --cached myFolder // remove folder in git/remote repository
+
+folder lokaal verwijderen:
+- $ git rm -r myFolder // remove local folder
+- $ git commit -m "removed unwanted folder /css"
+- $ git push
