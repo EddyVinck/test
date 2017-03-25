@@ -39,5 +39,4 @@ folder/map verwijderen van gitgub:
 
 folder lokaal verwijderen:
 - $ git rm -r myFolder // remove local folder
-- $ git commit -m "removed unwanted folder /css"
-- $ git push
+
