@@ -1,6 +1,6 @@
 # GithubTest
 
-pull alles van deze repository naar je locale folder en zet je naam in een van de list items.
+pull alles van deze repository naar je locale folder en zet je naam in een van de list items. Push de versie met je naam erin naar deze repository.
 
 ### tutorial
 
