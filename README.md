@@ -87,3 +87,57 @@ naar een andere map/locatie gaan:
 
 informatie over remote repository bekijken
 - $ git remote -v // view local folder(fetch) and remote repository(push)
+
+### damage control
+
+De meeste informatie uit dit stuk heb ik van deze tutorial: https://www.youtube.com/watch?v=FdZecVxzJbk
+
+veranderingen aan een bestand terugzetten als ze nog niet gecommit zijn:
+- $ git checkout index.html // bestand wordt gereset
+
+foutieve commit message goedzetten(alleen doen als je dit nog niet gepushed hebt):
+- $ git commit --amend -m 'new message'
+
+achteraf een bestand nog aan een commit toevoegen(alleen doen als je nog niet gepushed hebt)
+- $ git add file.txt
+- $ git commit --amend // open interactive editor
+- enter :wq to save and close out the editor
+- $ git log // shows commits. This will show that no extra commit was created.
+- $ git log --stat // this will show the files that were changed within the commit
+
+stel dat je per ongeluk in de verkeerde branch hebt gecommit
+- step 1: Move the commit to right branch
+- step 2: Return master branch back to the state of only having the original commits
+- // step 1
+- $ git log // you need the hash
+- $ git checkout subtract-feature
+- $ git cherry-pick [first 10 characters of hash] // cherry-pick creates a new commit based off of the original. the commit that was incorrectly committed to master has now also been committed to subtact-feature. Now we need to delete it from the master branch:
+- // step 2
+- $ git checkout master
+- $ git log // grab hash from the commit before the incorrect commit
+- // pick the right reset: soft, mixed or hard
+- $ git reset --soft [hash] // not what you want because it will keep the changes in the staging directory
+- $ git reset [hash] // mixed is default, keeps the changes but only in the working directory so this isn't what you want either
+- $ git reset --hard [hash] // make all the *tracked* files match the state they were in at the hash that you specify. It will get rid of your changes from the hash.
+- $ git status // see if there are any untracked files that were changed
+- $ git clean -df // get rid of any untracked directories and files
+- $ git log //
+
+stel dat je per ongeluk iets hardreset dan kun je binnen een bepaalde tijd die veranderingen toch terug halen
+- $ git reflog // gives all the latest changes with the associated hash
+- $ git checkout [hash] // you now have your changes back
+- // as you can see you are now in the [hash] branch(a detached HEAD)which will be deleted over time.
+- $ git branch backup
+- $ git branch
+- $ git checkout master
+- $ git branch // the detached HEAD branch no longer shows up once you checkout a different branch, however if it has not been over 30 days it probably still exists if you access it with the hash
+- $ git checkout backup // you still have the changes that you thought you had lost
+
+if you have already pushed changes, you want to use '$ git revert' which creates new commits to reverse the effect of some earlier commits(so you don't modify earlier commits/change history which could lead to problems in the future)
+- $ git log
+- // copy first 10 characters of hash
+- git revert [hash]
+- // enter :wq [enter] // save and exit
+- $ git log // see that the hash was reverted(the revert itself also has a hash)
+- $ git diff [hash] [reverted-hash] // show the difference between the two hashes
+- // again, this is necessary because when somebody pulls this down their history will not be corrupted
