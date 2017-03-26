@@ -20,7 +20,7 @@ veelgebruikte commands:
 - $ git add <file> // add file(s) to Index
 - $ git status // check status of working tree
 - $ git commit -m 'Je bericht' // commit changes to Index with comment
-- $ git init push // push to remote repository
+- $ git push // push to remote repository
 - $ git pull // Pull latest from remote repository
 
 
