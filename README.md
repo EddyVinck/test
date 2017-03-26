@@ -8,7 +8,7 @@ deze tutorial heb ik gevolgd: https://www.youtube.com/watch?v=SWYqp7iY_Tc
 
 en nog een paar andere tutorials
 - https://www.youtube.com/watch?v=HVsySz-h9r4
-
+- https://www.youtube.com/watch?v=FdZecVxzJbk
 
 ### download
 
