@@ -15,6 +15,7 @@ https://git-scm.com/downloads
 https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf
 
 veelgebruikte commands:
+- $ git clone <url> <To this folder> // clone/download repository to a specified location on your PC
 - $ git init // initialize local git repository
 - $ git add <file> // add file(s) to Index
 - $ git status // check status of working tree
@@ -40,3 +41,5 @@ folder/map verwijderen van gitgub:
 folder lokaal verwijderen:
 - $ git rm -r myFolder // remove local folder
 
+clone naar huidige folder:
+- $ git clone <url> . // clone to current folder
