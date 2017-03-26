@@ -43,3 +43,7 @@ folder lokaal verwijderen:
 
 clone naar huidige folder:
 - $ git clone <url> . // clone to current folder
+
+bekijk bestanden in huidige folder
+- $ ls
+- $ ls -la // more details
