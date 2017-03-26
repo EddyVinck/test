@@ -39,11 +39,9 @@ veelgebruikte commands:
 - $ git branch // see all current branches and in which branch you currently are
 - $ git push origin [name_of_your_new_branch] // Push the branch on github
 - $ git push -u origin [name_of_your_branch] /* push branch to remote repository and the -u tells git that you want to associate your local branch with the remote branch. This allows you to just use '$ git pull' and '$ git push' in the future without specifying to/from where you want to push or pull. */
-
 - $ git merge [name_of_your_branch] // merge [name_of_your_branch] to local master(assuming you are in the master branch)
 - $ git push origin master // push merged branch to remote repository
 - $ git branch --merged // shows which branches have been merged to the current branch
-
 - $ git branch -d [name_of_your_new_branch] // Delete a branch on your local filesystem
 - $ git push origin --delete [name_of_your_new_branch] // Delete branch on Github
 
