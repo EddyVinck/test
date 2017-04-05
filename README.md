@@ -84,6 +84,8 @@ bekijk bestanden in huidige folder
 naar een andere map/locatie gaan:
 - $ cd /nestedFolder
 - $ cd .. // go to parent folder
+- touch file.txt // create file.txt
+- mkdir directoryname // create directory
 
 informatie over remote repository bekijken
 - $ git remote -v // view local folder(fetch) and remote repository(push)
